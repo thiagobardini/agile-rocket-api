@@ -23,7 +23,6 @@ router.post('/accounts', requireToken, (req, res, next) => {
   console.log('The user object:', req.user)
   console.log('The incoming event data:', req.body)
   const postData = req.body.account
-  // postData.userOwner = req.user.userName
   postData.owner = req.user._id
 
   Account.create(postData)
