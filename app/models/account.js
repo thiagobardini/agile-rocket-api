@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const opportunitySchema = require('./opportunity')
 
 const accountSchema = new mongoose.Schema({
   accountName: {
@@ -29,6 +30,7 @@ const accountSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  opportunities: [opportunitySchema],
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',

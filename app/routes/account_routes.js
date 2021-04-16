@@ -46,10 +46,10 @@ router.get('/accounts/:id', (req, res, next) => {
 router.get('/accounts', (req, res, next) => {
   Account.find()
     .populate('owner')
+    .populate('opportunity.opportunities')
     // .then(accounts => {
     //   return accounts.map(account => account.toObject())
     // })
-    // respond with status 200 and JSON of the blogposts
     .then(accounts => res.status(200).json({ accounts: accounts }))
     // if an error occurs, pass it to the handler
 
@@ -76,7 +76,6 @@ router.patch('/accounts/:id', requireToken, removeBlanks, (req, res, next) => {
 })
 
 // DESTROY
-// DELETE /blogposts/5a7db6c74d55bc51bdf39793
 router.delete('/accounts/:id', requireToken, (req, res, next) => {
   Account.findById(req.params.id)
     .then(handle404)
