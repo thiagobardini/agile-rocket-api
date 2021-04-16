@@ -45,9 +45,10 @@ router.get('/accounts/:id', (req, res, next) => {
 // GET
 router.get('/accounts', (req, res, next) => {
   Account.find()
-    .then(accounts => {
-      return accounts.map(account => account.toObject())
-    })
+    .populate('owner')
+    // .then(accounts => {
+    //   return accounts.map(account => account.toObject())
+    // })
     // respond with status 200 and JSON of the blogposts
     .then(accounts => res.status(200).json({ accounts: accounts }))
     // if an error occurs, pass it to the handler
