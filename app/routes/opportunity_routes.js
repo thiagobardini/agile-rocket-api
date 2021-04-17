@@ -30,7 +30,7 @@ router.get('/opportunities', (req, res, next) => {
 })
 
 // UPDATE
-router.patch('/opportunities/:opportunitiesId', (req, res, next) => {
+router.patch('/opportunities/:opportunitiesId', requireToken, (req, res, next) => {
   const opportunitiesId = req.params.opportunitiesId
   const opportunityData = req.body.opportunity
   const accountId = opportunityData.accountId

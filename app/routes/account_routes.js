@@ -46,7 +46,7 @@ router.get('/accounts/:id', (req, res, next) => {
 router.get('/accounts', (req, res, next) => {
   Account.find()
     .populate('owner')
-    .populate('opportunity.opportunities')
+    .populate('opportunity')
     .then(accounts => res.status(200).json({ accounts: accounts }))
     // if an error occurs, pass it to the handler
 
