@@ -31,7 +31,6 @@ router.get('/opportunities', (req, res, next) => {
 
 // UPDATE
 router.patch('/opportunities/:opportunitiesId', (req, res, next) => {
-  // delete req.body.guest.owner
   const opportunitiesId = req.params.opportunitiesId
   const opportunityData = req.body.opportunity
   const accountId = opportunityData.accountId
@@ -40,6 +39,22 @@ router.patch('/opportunities/:opportunitiesId', (req, res, next) => {
     .then(account => {
       const opportunity = account.opportunities.id(opportunitiesId)
       opportunity.set(opportunityData)
+      return account.save()
+    })
+    .then(() => res.sendStatus(204))
+    .catch(next)
+})
+
+// Destroying a review
+router.delete('/opportunities/:opportunitiesId', (req, res, next) => {
+  const opportunitiesId = req.params.opportunitiesId
+  const accountId = req.body.opportunity.accountId
+  Account.findById(accountId)
+    .then(handle404)
+    .then(account => {
+      account.opportunities.id(opportunitiesId).remove()
+      // another syntax for deleting is
+      // account.opportunities.pull(opportunitiesId)
       return account.save()
     })
     .then(() => res.sendStatus(204))
