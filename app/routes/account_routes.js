@@ -36,6 +36,7 @@ router.post('/accounts', requireToken, (req, res, next) => {
 // GET
 router.get('/accounts/:id', (req, res, next) => {
   Account.findById(req.params.id)
+    .populate('opportunities')
     .then(handle404)
     .then(account => res.status(200).json({ account: account.toObject() }))
     .catch(next)
@@ -46,7 +47,7 @@ router.get('/accounts/:id', (req, res, next) => {
 router.get('/accounts', (req, res, next) => {
   Account.find()
     .populate('owner')
-    .populate('opportunity')
+    .populate('opportunities')
     .then(accounts => res.status(200).json({ accounts: accounts }))
     // if an error occurs, pass it to the handler
 

@@ -7,7 +7,7 @@ const passport = require('passport')
 const requireToken = passport.authenticate('bearer', { session: false })
 
 // Create
-router.post('/opportunities/:id', requireToken, (req, res, next) => {
+router.post('/accounts/:id/opportunity-create', requireToken, (req, res, next) => {
   const opportData = req.body.opportunity
   const accountId = req.params.id
   Account.findById(accountId)
@@ -30,7 +30,7 @@ router.get('/opportunities', (req, res, next) => {
 })
 
 // UPDATE
-router.patch('/opportunities/:opportunitiesId', requireToken, (req, res, next) => {
+router.patch('/accounts/:id/opportunities/:opportunitiesId', requireToken, (req, res, next) => {
   const opportunitiesId = req.params.opportunitiesId
   const opportunityData = req.body.opportunity
   const accountId = opportunityData.accountId
