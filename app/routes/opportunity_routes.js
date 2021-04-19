@@ -23,8 +23,9 @@ router.post('/accounts/:id/opportunity-create', requireToken, (req, res, next) =
 router.get('/opportunities', (req, res, next) => {
   const post = req.body.opportunity
   Account.findById(post)
-    .then(handle404)
+    .populate('owner')
     .populate('opportunity.opportunities')
+    .then(handle404)    
     .then(account => res.status(200).json({ opportunities: account.opportunities.toObject() }))
     .catch(next)
 })
