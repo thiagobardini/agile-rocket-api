@@ -66,7 +66,7 @@ router.patch(
   }
 )
 
-// Delete
+// DELETE
 router.delete(
   '/accounts/:id/opportunities/:opportunitiesId',
   (req, res, next) => {
