@@ -50,6 +50,16 @@ app.use(auth)
 // JS objects before they reach the route files.
 // The method `.use` sets up middleware for the Express application
 app.use(express.json())
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  )
+  next()
+})
+
 // this parses requests sent by `$.ajax`, which use a different content type
 app.use(express.urlencoded({ extended: true }))
 
