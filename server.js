@@ -52,7 +52,7 @@ app.use(auth)
 app.use(express.json())
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://thiagobardini.com/agile-rocket-client')
+  res.setHeader('Access-Control-Allow-Origin', ' https://mysterious-sierra-58663.herokuapp.com')
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
