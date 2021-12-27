@@ -51,14 +51,14 @@ app.use(auth)
 // The method `.use` sets up middleware for the Express application
 app.use(express.json())
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://thiagobardini.com/agile-rocket-client')
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept'
-  )
-  next()
-})
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', 'https://thiagobardini.com/agile-rocket-client')
+//   res.header(
+//     'Access-Control-Allow-Headers',
+//     'Origin, X-Requested-With, Content-Type, Accept'
+//   )
+//   next()
+// })
 
 // this parses requests sent by `$.ajax`, which use a different content type
 app.use(express.urlencoded({ extended: true }))
