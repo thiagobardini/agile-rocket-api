@@ -76,3 +76,4 @@ Manage Accounts and Opportunities administrative tasks, and close more deals fas
 
 ## ERD
 ![](https://i.imgur.com/NqYzWFc.png)
+
