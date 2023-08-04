@@ -1,7 +1,7 @@
 'use strict'
 
 // creating a base name for the mongodb
-const mongooseBaseName = 'agile-rocket-api'
+const mongooseBaseName = 'agile-rocket'
 
 // create the mongodb uri for development and test
 const database = {
