@@ -4,24 +4,21 @@ CRM - Custom Relation Management
 Manage Accounts and Opportunities administrative tasks, and close more deals faster.
 
 ## Technologies used for the Application.
-- HTML
-- SCSS
-- JavaScript
-- React
-- Axios
-- Bootstrap
+
+- NodeJS
+- ExpressJS
 - Passport
 - MongoDB
+- Heroku
 
 ## Important Links
 
-- [Agile Rocket Client Repo](https://github.com/thiagobardini/agile-rocket-client)
-- [Agile Rocket API Repo](https://github.com/thiagobardini/agile-rocket-api)
-- [Deployed Agile Rocket API](https://mysterious-sierra-58663.herokuapp.com/)
-- [Deployed Agile Rocket Client](https://thiagobardini.github.io/agile-rocket-client/#/)
+- [TB CRM API Repo](https://github.com/thiagobardini/tb-crm-api)
+- [Deployed TB CRM API](https://tb-crm-6f5aa013f7cf.herokuapp.com/)
+
 
 ## API URL
-    production: 'https://mysterious-sierra-58663.herokuapp.com/',
+    production: 'https://tb-crm-6f5aa013f7cf.herokuapp.com/',
     development: 'http://localhost:4741'
   
 ## Set up and installation
