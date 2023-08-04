@@ -14,7 +14,7 @@ Manage Accounts and Opportunities administrative tasks, and close more deals fas
 ## Important Links
 
 - [TB CRM API Repo](https://github.com/thiagobardini/agile-rocket-api)
-- [Deployed TB CRM API](https://tb-crm-6f5aa013f7cf.herokuapp.com/)
+- [Deployed TB CRM API](https://agile-rocket-2bde93bcd7f0.herokuapp.com)
 
 
 ## API URL
